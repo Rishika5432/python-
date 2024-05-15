@@ -1,0 +1,51 @@
+admin   SupporT#135791
+
+def encode_fun(txt):
+  '''  take user input and encode it in below format 
+  if the word contains atleast 3 characters, remove the first letter and append it at the end
+if count(txt) :
+  
+  now append three random characters at the starting and the end
+else:
+  simply reverse the string '''
+  import random
+  if len(txt)>=3 :
+  # add 1st letter in last 
+    txt1=txt[1:]+txt[0]
+    # add random numbers 
+    random_character1=random.choices("abcdefghijklmnopqrstuvwxyz", k=3)
+    random_character2=random.choices("abcdefghijklmnopqrstuvwxyz", k=3)
+    new_string = random_character1+list(txt1)+random_character2
+    new_string = "".join(new_string)
+    return new_string
+  else :
+      print(txt[::-1])
+def decode_fun(txt) :
+  # if the word contains less than 3 characters, reverse it
+  if len(txt)<=3 :
+    txt=txt[::-1]
+    return txt
+  else:
+    txt1=txt[3:-3] 
+    txt1=txt1[1:]+txt1[0]
+	return txt1
+for txt1 in word_string : for txt1 in word_string : 
+  if option==1 :
+   
+      encode_fun(txt1,key)
+      word_string1.append(encode_fun(txt1,key))
+    print(" ".join(word_string1))
+  elif option==2 :	
+    
+    
+    
+    
+    
+txt=input("enter your text      ")
+option=int(input("enter 1 for encodeing \n2 for decoding \n "))
+if option==1 :
+  encode_fun(txt)
+elif option==2 :
+  decode_fun(txt)
+else :
+  print("invalid option  ")
